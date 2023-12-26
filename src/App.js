@@ -13,34 +13,35 @@ import { getAllCountries } from './redux/countryReducer';
 import { selectCountries, selectTheme, selectValue } from './redux/selectCountries';
 
 function App() {
-   const dispatch = useDispatch()
-   const countries = useSelector(selectCountries);
-   const value = useSelector(selectValue)
-   const themeMode = useSelector(selectTheme)
-   useEffect(() => {
-      dispatch(getAllCountries())
-   }, [])
+  const dispatch = useDispatch();
+  const countries = useSelector(selectCountries);
+  const value = useSelector(selectValue);
+  const themeMode = useSelector(selectTheme);
+  useEffect(() => {
+    dispatch(getAllCountries());
+  }, []);
 
-   const theme = createTheme({
-      palette: {
-         mode: themeMode ? "dark" : "light",
-      }
-   })
-   return (
-      <div>
-         <ThemeProvider theme={theme}>
-            <Paper>
-               <Header value={value} />
-               <Container maxWidth='lg' sx={{ mt: 10 }}>
-                  <Routes>
-                     <Route path="/" element={<Content countries={countries} value={value} />} />
-                     <Route path=":country" element={<CountryPage />} />
-                  </Routes>
-               </Container>
-            </Paper>
-         </ThemeProvider>
-      </div >
-   );
+  const theme = createTheme({
+    palette: {
+      mode: themeMode ? "dark" : "light",
+    }
+  });
+
+  return (
+    <div>
+      <ThemeProvider theme={theme}>
+        <Paper>
+          <Header value={value} />
+          <Container maxWidth='lg' sx={{ mt: 10 }}>
+            <Routes>
+              <Route path="/" element={<Content countries={countries} value={value} />} />
+              <Route path=":country" element={<CountryPage />} />
+            </Routes>
+          </Container>
+        </Paper>
+      </ThemeProvider>
+    </div>
+  );
 }
 
 export default App;

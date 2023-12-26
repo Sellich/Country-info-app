@@ -1,23 +1,23 @@
 export const selectCountries = (state) => {
-   return state.countries.countries
+  return state.countries.countries;
 }
 
 export const selectCountry = (state) => {
-   return state.countryPage.country
+  return state.countryPage.country;
 }
 
 export const selectValue = (state) => {
-   return state.search.value
+  return state.search.value;
 }
 
 export const selectContinent = (state) => {
-   return state.continents.continent
+  return state.continents.continent;
 }
 
 export const selectContinents = (state) => {
-   return state.continents.continents
+  return state.continents.continents;
 }
 
 export const selectTheme = (state) => {
-   return state.theme.darkTheme
+  return state.theme.darkTheme;
 }

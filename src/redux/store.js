@@ -6,13 +6,13 @@ import searchReducer from "./searchReducer";
 import themeReducer from "./themeReducer";
 
 const store = configureStore({
-   reducer: {
-      countries: countryReducer,
-      countryPage: countryPageReducer,
-      search: searchReducer,
-      continents: ContinentsReducer,
-      theme: themeReducer,
-   }
-})
+  reducer: {
+    countries: countryReducer,
+    countryPage: countryPageReducer,
+    search: searchReducer,
+    continents: ContinentsReducer,
+    theme: themeReducer,
+  }
+});
 
 export default store;
